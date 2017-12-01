@@ -1,0 +1,29 @@
+
+<h1>Sign Up</h1>
+<%= form_for(@swimmer) do |form|%>
+    <p>
+      <%= form.label(:first_name)%><br>
+      <%= form.text_field(:first_name)%><br>
+    </p>
+    <p>
+      <%= form.label(:last_name)%><br>
+      <%= form.text_field(:last_name)%><br>
+    </p>
+    <p>
+      <%= form.label(:age)%><br>
+      <%= form.text_field(:age)%><br>
+    </p>
+    <p>
+      <%= form.label(:club)%><br>
+      <%= form.text_field(:club)%><br>
+    </p>
+
+
+    <% for message in @swimmer.errors.full_messages %>
+      <center><li><%= message %></li><center>
+    <% end %>
+    <br>
+
+    <%= form.submit("Create Swimmer")%>
+  <%end%>
+</div>

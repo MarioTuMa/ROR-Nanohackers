@@ -1,0 +1,31 @@
+<body background="http://wlpapers.com/images/water-background-1.jpg">
+  <h1>Swimmers</h1>
+  <%= form_tag(swimmers_path, method: :get) do %>
+    First Name<%= text_field_tag :term, params[:term] %>
+    <%= submit_tag 'Search', name:nil %>
+  <% end %>
+
+  <table border="1">
+
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <% for swimmer in @swimmers %>
+        <tr>
+          <div class='task'>
+              <th><strong> <%= swimmer.last_name+", "+swimmer.first_name%>  </strong> <%="("+swimmer.age+")"+swimmer.club %></th>
+
+          </div>
+          <th><%= link_to 'View Profile', swimmer_path(swimmer) %></th>
+          </tr>
+        <% end %>
+
+    </tbody>
+    </table>
+    Can't seem to find yourself. Don't worry. You can make a profile here:
+    <%= link_to 'New Profile', new_swimmer_path() %>

@@ -1,0 +1,14 @@
+<h1><%= @animal.name %></h1>
+
+<%= link_to "Edit", edit_animal_path(@animal) %>
+
+<p>
+  <%= @animal.name %> is a <%= @animal.age %>-year-old <%= @animal.kind %>.
+</p>
+<ul>
+  <% @animal.visits.each_with_index do |visit,index| %>
+    <li>
+       <%=@animal.name%> was visited by <%=visit.visitor%> to go up to a total of being visited <%=index+1%> times
+    </li>
+  <%end%>
+</ul>

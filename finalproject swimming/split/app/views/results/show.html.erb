@@ -1,0 +1,7 @@
+<body background="http://wlpapers.com/images/water-background-1.jpg">
+<h1>Result</h1>
+<%seconds=@result.seconds %>
+<%if(seconds<10)
+  seconds="0"+seconds.to_s
+end%>
+<%=@result.swimmer.first_name%> swam in lane <%=@result.lane%> and recieved a time of <%=@result.minutes%>:<%=seconds%> in the <%=@result.event.distance%>M <%=@result.event.stroke%> on <%=@result.month%>/<%=@result.day%>/<%=@result.year%>

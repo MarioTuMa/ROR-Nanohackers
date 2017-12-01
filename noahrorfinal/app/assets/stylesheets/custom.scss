@@ -1,0 +1,12 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+h1 {
+  text-align: center;
+}
+
+.form-container {
+  border-radius: 10px;
+  border: 5px #eee solid;
+  padding: 20px;
+}

@@ -1,0 +1,22 @@
+<body background="http://wlpapers.com/images/water-background-1.jpg">
+<h1>Add an event</h1>
+<%= form_for(@event) do |form|%>
+    <p>
+      <%= form.label(:stroke)%><br>
+      <%= form.text_field(:stroke)%><br>
+    </p>
+    <p>
+      <%= form.label(:distance)%><br>
+      <%= form.text_field(:distance)%><br>
+    </p>
+
+
+
+    <% for message in @event.errors.full_messages %>
+      <center><li><%= message %></li><center>
+    <% end %>
+    <br>
+
+    <%= form.submit("Create event")%>
+  <%end%>
+</div>

@@ -1,0 +1,32 @@
+<center>
+
+
+
+  <%= form_for(@animal) do |form|%>
+    <p>
+      <%= form.label(:name)%><br>
+      <%= form.text_field(:name)%><br>
+    </p>
+    <p>
+      <%= form.label(:age)%><br>
+      <%= form.text_field(:age)%><br>
+    </p>
+    <p>
+      <%= form.label(:kind)%><br>
+      <%= form.text_field(:kind)%><br>
+    </p>
+    <p>
+      <%= form.label(:food)%><br>
+      <%= form.select(:food, '<option value="1">Pellets</option><option value="2">Meat</option><option value="3">Grass</option>'.html_safe) %>
+
+    </p>
+
+
+    <% for message in @animal.errors.full_messages %>
+      <center><li><%= message %></li><center>
+    <% end %>
+    <br>
+
+    <%= form.submit("Create Animal")%>
+  <%end%>
+</center>

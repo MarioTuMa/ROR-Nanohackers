@@ -1,0 +1,36 @@
+<% provide(:title, 'Sign Up') %>
+<h1>Sign Up</h1>
+<div class = 'container form-container'>
+  <%= form_for @user do |f| %>
+    <%= render 'shared/error_messages' %>
+    <div class = 'form-group'>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
+    <div class = 'form-group'>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+    <div class = 'form-group'>
+      <%= f.label :age %>
+      <%= f.number_field :age, class: 'form-control', :min => '1' %>
+    </div>
+    <div class = 'form-group'>
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'form-control' %>
+    </div>
+    <div class = 'form-group'>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    <div class = 'form-group'>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <div class = 'form-group'>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+    <%= f.submit "Create Account", class: "btn btn-primary" %>
+    <% end %>
+</div>

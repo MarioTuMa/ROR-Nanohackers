@@ -1,0 +1,11 @@
+<h1>Last Visit</h1>
+
+
+
+<ul>
+  <% for visit in @vis %>
+    <li>
+      <%= link_to visit.name, visit %>
+    </li>
+  <% end %>
+</ul>

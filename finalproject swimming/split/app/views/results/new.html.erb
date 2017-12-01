@@ -1,0 +1,51 @@
+<body background="http://wlpapers.com/images/water-background-1.jpg">
+<h1>New Result</h1>
+<% for message in @result.errors.full_messages %>
+  <center><li><%= message %></li><center>
+<% end %>
+<%= form_for(@result) do |form|%>
+    <p>
+      <%= form.label(:minutes)%><br>
+      <%= form.text_field(:minutes)%><br>
+    </p>
+    <p>
+      <%= form.label(:seconds)%><br>
+      <%= form.text_field(:seconds)%><br>
+    </p>
+    <p>
+      <%= form.label(:lane)%><br>
+      <%= form.text_field(:lane)%><br>
+    </p>
+    <%if !@swimmer_id%>
+    <p>
+      <%= form.label(:swimmer_id)%><br>
+      <%= form.text_field(:swimmer_id)%><br>
+    </p>
+
+    <%else%>
+      <%=@swimmer_id%>
+      <%= form.hidden_field :swimmer_id, :swimmer_id => @swimmer_id %>
+
+    <%end%>
+    <p>
+      <%= form.label(:event_id)%><br>
+      <%= form.collection_select(:event_id, Event.all, :id, :name, :prompt => 'Select') %>
+    </p>
+    <p>
+      <table>
+        <tr>
+          <th><%= form.label(:month)%></th>
+          <th><%= form.label(:day)%></th>
+          <th><%= form.label(:year)%></th>
+        </tr>
+        <tr>
+          <td><%= form.text_field(:month)%></td>
+          <td><%= form.text_field(:day)%></td>
+          <td><%= form.text_field(:year)%></td>
+        </tr>
+      </table>
+    </p>
+    <br>
+    <%= form.submit("Upload Result")%>
+  <%end%>
+</div>

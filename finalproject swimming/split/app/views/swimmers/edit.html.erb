@@ -1,0 +1,28 @@
+<body background="http://wlpapers.com/images/water-background-1.jpg">
+<h1>Edit Swimmer Profile</h1>
+<ul>
+  <% for message in @swimmer.errors.full_messages %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
+<%= form_for(@swimmer) do |form| %>
+  <p>
+    <%= form.label(:first_name) %><br>
+    <%= form.text_field(:first_name) %><br>
+  </p>
+  <p>
+    <%= form.label(:last_name) %><br>
+    <%= form.text_field(:last_name) %><br>
+  </p>
+  <p>
+    <%= form.label(:age) %><br>
+    <%= form.text_field(:age) %><br>
+  </p>
+  <p>
+    <%= form.label(:club) %><br>
+    <%= form.text_field(:club) %><br>
+  </p>
+  <%= form.submit("Save") %>
+  <%= link_to "Cancel", @swimmer %>
+<% end %>

@@ -1,0 +1,27 @@
+<body background="http://wlpapers.com/images/water-background-1.jpg">
+  <h1>This is a list of all Olympic and Pre Olympic Events </h1>
+  <h5>Not actually because I attend highschool and don't have people to manually enter everything :( Shh</h5>
+
+  <table border="1">
+
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <% for event in @events %>
+        <tr>
+          <div class='task'>
+          <th><strong> <%= event.distance+" Meter "+event.stroke%>  </strong></th>
+
+          </div>
+          <th><%= link_to 'View Event Times', event_path(event) %></th>
+          </tr>
+        <% end %>
+
+    </tbody>
+  </table>

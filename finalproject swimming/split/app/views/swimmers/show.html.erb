@@ -1,0 +1,12 @@
+<body background="http://wlpapers.com/images/water-background-1.jpg">
+<center>
+  <h1><%= @swimmer.first_name %> <%= @swimmer.last_name%> (<%= @swimmer.age%>)</h1>
+  <h2><%= @swimmer.club %></h2>
+  <%= link_to 'New Race Result', new_result_path(swimmer_id:@swimmer.id) %>
+  <br>
+  <th></th>
+  <% for result in @swimmer.results %>
+    <%=@swimmer.first_name%> swam in lane <%=result.lane%> and recieved a time of <%=result.minutes%>:<%=result.seconds%>
+    in the <%=result.event.distance%>M <%=result.event.stroke%> on <%=result.month%>/<%=result.day%>/<%=result.year%><br>
+  <% end %>
+</center>

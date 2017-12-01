@@ -1,0 +1,14 @@
+<h1>All Animals</h1>
+
+<h2>
+  <%= link_to "New Animal", new_animal_path %>
+</h2>
+
+<ul>
+  <% for animal in @animals %>
+    <li>
+      <%= link_to animal.name, animal %>
+    </li>
+  <% end %>
+</ul>
+
